@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	
+	<title>Lab 1 | Login Page</title>
+	
+	<!-- Specify the CSS File -->
+	<link rel="stylesheet" type="text/css" href="CSS/MyWebProject.css" >
+	
+	<!-- Specify the JavaScript File -->
+	<script type="text/javascript" src="JS/MyWebProject.js"></script>
+	
+</head>
+<body>
+	<h1>Registration Web Page</h1>
+	
+	<p>Ensure that the given <b>username</b> is available and the <b>password</b> correctly typed twice.</p>
+	
+	<form action="/Check" method="POST">
+		<table class="logintable">
+			<tr>
+				<th>Username:</th>
+				<td> <input type="text" name="username"> </td>
+				<td> <div id="checkData">Check</div></td>
+				<td class="checkOutput"> <div id="checkOutput">Check Response</div> </td>
+			</tr>
+			<tr>
+				<th>Password:</th>
+				<td> <input type="password" name="password"> </td>
+				<td colspan="2"> <br/> </td>
+			</tr>
+			<tr>
+				<td colspan="4" >Please Enter Your Password Again</td>
+			</tr>
+			<tr>
+				<th>Password:</th>
+				<td> <input type="password" name="password2"> </td>
+				<td colspan="2"> <br/> </td>
+			</tr>
+			<tr>
+				<td> <input type="reset" value="Reset" > </td>
+				<td> <input type="submit" value="Register" disabled="disabled"> </td>
+				<td colspan="2"> <br/> </td>
+			</tr>
+		</table>
+	</form>
+	
+</body>
+</html>
