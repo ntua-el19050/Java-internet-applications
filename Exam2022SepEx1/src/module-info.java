@@ -4,6 +4,6 @@
 /**
  * 
  */
-module Exam2022JuneEx1 {
+module Exam2022SepEx1 {
 	requires java.desktop;
 }
