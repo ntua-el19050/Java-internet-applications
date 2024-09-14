@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="UTF-8">
+	
+	<title>Search criterion</title>
+	
+	<style>
+		#help{
+			margin:5px;
+		}
+		#equation{
+			color:red;
+		}
+	</style>
+	<script>
+    function validateForm() {
+        // Get the values of the form fields
+        var characteristic = document.getElementById("characteristics").value;
+        var value = document.getElementById("equation").value;
+
+        // Check if product name is empty
+        if (characteristic.trim() == "" || characteristic=="Nothing") {
+            alert("Παρακαλώ επιλέξτε κάτι.");
+            return false;
+        }
+
+        
+        if (value.trim().length == ""){
+        	alert("Παρακαλώ γράψτε την έκφραση που θέλετε")
+        	return false;
+        }
+        if (value[0] != ">" && value[0] != "=" && value[0] != "<"){
+        	alert("Παρακαλώ γράψτε την έκφραση σωστά με <, > ή = στην αρχή")
+        	return false;
+        }
+        
+
+        return true;
+    }
+    function showPreview(productName, description, price){
+    	var previewDiv = document.getElementById("preview");
+
+        // Set the content of the preview
+        previewDiv.innerHTML = "<h3><b>Προεπισκόπηση Προϊόντος</b></h3>" +
+                               "<p><strong>Όνομα προϊόντος:</strong> " + productName + "</p>" +
+                               "<p><strong>Περιγραφή:</strong> " + description + "</p>" +
+                               "<p><strong>Τιμή:</strong> " + price + " €</p>";
+
+        // Make the preview div visible
+        previewDiv.style.display = "block";
+    }
+    </script>
+	
+</head><body>
+
+	<h1>Search criterion</h1>
+	<form action="ExamaServlet" method="POST" onsubmit="return validateForm()">
+		<label>Characteristics for selection</label>
+		<select name="characteristics" id="characteristics">
+		  <option value="Nothing"></option>
+		  <option value="CHARS">CHARS</option>
+		  <option value="LETTERS">LETTERS</option>
+		  <option value="NUMBERS">NUMBERS</option>
+		  <option value="WORDS">WORDS</option>
+		</select>
+		<div id="help"></div>
+		
+		<label>Provide what should we search for</label>
+		<input type="text" name="equation" id="equation">
+		
+		<input id="submit" type="submit" value="Submit">
+	</form>
+				
+
+</body></html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Update Password</title>
+<style>
+		body { font-family: Arial, Helvetica, sans-serif; }
+		h1, h3, form, p { padding: 10px; }
+		h1 { background-color: #E7E7E7; font-family: "Times New Roman", Times, serif; }
+		th { color: #000A6E; text-align:left; font-weight: normal; }
+		input { margin: 2px 4px; padding: 6px 12px; border-radius: 10px; font-size: 1.2em; }
+	</style>
+
+<script type="text/javascript" src="select.js"></script>
+
+</head>
+<body>
+<h1>Web Application - Exam - July 2022</h1>
+
+	<h3>Insert Page</h3>
+	
+	<p>Provide Case info</p>
+	
+	<!-- Update action if being required -->
+	<form action="InsertServlet" method="POST">
+		<h2>Select Test Method</h2>
+		<select name = "Method"  id = "method">
+		<option value= 1 > SELF TEST</option>
+		<option value= 2 > RAPID TEST</option>
+		<option value= 3 > PCR TEST</option>
+		</select>
+		
+		<table>
+			<tr>
+				<th>DIAGNOSIS DATE:</th>
+				<td> <input type="text" name="dDate"> </td>
+			</tr>
+			<tr>
+				<th> DIAGNOSIS LOCATION :</th>
+				<td> <input type="text" name="location"> </td>
+			</tr>
+			<tr>
+				<th>REPORT UID:</th>
+				<td> <input type="text" name="repID"> </td>
+			</tr>
+			<tr>
+				<td> <input type="reset" value="Reset" > </td>
+				<td> <input type="submit" value="Submit"> </td>
+			</tr>
+		</table>
+	</form>
+
+
+</body>
+</html>

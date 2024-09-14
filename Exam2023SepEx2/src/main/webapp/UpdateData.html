@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html><head>
+
+	<meta charset="ISO-8859-1">
+	<title>Exam Sep 23 | Updated Data</title>
+	
+	<script type="text/javascript">
+	
+		document.addEventListener("DOMContentLoaded", function(){
+			
+			const grade = document.querySelector('input[name=studentgrade]');
+			const but = document.getElementById("sub");
+			but.disabled = true;
+			
+			grade.addEventListener("keyup", function(){
+				if(grade.value<0 || grade.value>10){   
+					but.disabled = true;
+				}
+				else{
+					but.disabled = false;
+				}
+			});
+			
+			grade.addEventListener("keyup", function(){
+				if(grade.value<0 || grade.value>10){   
+					grade.style.backgroundColor = "red";
+				}
+				else{
+					grade.style.backgroundColor = "green";
+				}
+			});
+			
+		})	
+		
+	</script>
+	
+	
+</head><body>
+	
+	<h3>Update Student Course Grade</h3>
+
+	<form action="UpdateDataAction" method="GET">
+	
+		<input type="hidden" name="courseid" value="xyz">
+		<input type="hidden" name="studentid" value="xyz">
+		
+		<table>
+			<tr>
+				<th>Grade:</th>
+				<td> <input type="number" name="studentgrade"> </td>
+				<td>Integer between 0 and 10</td>
+			</tr>
+			<tr>
+				<td> <input type="reset" value="Reset" > </td>
+				<td colspan="2"> <input type="submit" value="Update Data" id = "sub"> </td>
+			</tr>
+		</table>
+		
+	</form>
+
+</body></html>

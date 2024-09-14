@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="ISO-8859-1">
+	
+	<title>Exam | Login Page</title>
+	
+	<style>
+		h1 { margin-left: 10px; font-family: Arial, Helvetica, sans-serif; }
+		table { padding: 10px 30px; margin: 10px; border: 1px dashed gray; }
+		th, td { padding: 5px; font-family: Arial, Helvetica, sans-serif; }
+		input { padding: 5px 10px; border-radius: 5px; font-size: 1.2em; }
+	</style>
+	
+</head><body>
+
+	<h1>June 24 - Exam - Login Page</h1>
+	
+	<form action="ExamServlet" method="POST">
+		<table class="logintable">
+			<tr>
+				<th>Username:</th>
+				<td> <input type="text" name="username"> </td>
+			</tr>
+			<tr>
+				<th>Password:</th>
+				<td> <input type="password" name="password"> </td>
+			</tr>
+			<tr>
+				<td> <input type="reset" value="Reset" > </td>
+				<td> <input type="submit" value="Find Tasks"> </td>
+			</tr>
+		</table>
+	</form>
+
+</body></html>

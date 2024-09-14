@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Φόρμα Προϊόντος</title>
+    <style>
+    body, html {
+    	height: 100%;
+    	margin: 0;
+    	text-align: center;
+  	}
+    form{
+    	display: grid;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	    padding: 70px 0;
+	    margin: 100px auto;
+	    width: 50%;
+    	background:rgb(0, 0, 160);
+    	text-align: center;
+    }
+    input{
+    	outline-width:3px;
+    	outline-color:red;
+    	outline-style:solid;
+    }
+    textarea{
+    	width:100%;
+    	outline-width:3px;
+    	outline-color:red;
+    	outline-style:solid;
+    }
+    .form-container {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    height: 100vh; /* Full viewport height */
+	    flex-direction: column; /* Centers form vertically as well */
+	    text-align: center;
+	  }
+
+    #submit{
+    	background-color:green;
+    	color:white;
+    }
+    </style>
+    <script>
+    function validateForm() {
+        // Get the values of the form fields
+        var productName = document.getElementById("product-name").value;
+        var description = document.getElementById("description").value;
+        var price = document.getElementById("price").value;
+
+        // Check if product name is empty
+        if (productName.trim() == "") {
+            alert("Παρακαλώ εισάγετε το όνομα του προϊόντος.");
+            return false;
+        }
+
+        
+        if (description.trim().length < 10){
+        	alert("Παρακαλώ γράψτε περιγραφή με περισσότερους από 10 χαρακτήρες")
+        	return false;
+        }
+        
+
+        // Check if price is empty or not a valid number
+        if (price == "" || isNaN(price) || price <= 0) {
+            alert("Παρακαλώ εισάγετε μια έγκυρη τιμή για το προϊόν.");
+            return false;
+        }
+
+        showPreview(productName, description, price);
+        return false;
+    }
+    
+    function showPreview(productName, description, price){
+    	var previewDiv = document.getElementById("preview");
+
+        // Set the content of the preview
+        previewDiv.innerHTML = "<h3>Προεπισκόπηση Προϊόντος</h3>" +
+                               "<p><strong>Όνομα προϊόντος:</strong> " + productName + "</p>" +
+                               "<p><strong>Περιγραφή:</strong> " + description + "</p>" +
+                               "<p><strong>Τιμή:</strong> " + price + " €</p>";
+
+        // Make the preview div visible
+        previewDiv.style.display = "block";
+    }
+    </script>
+</head>
+<body>
+	<h1>Φόρμα Προσθήκης Προϊόντος</h1>
+	   <div class="form-container">
+	<form onsubmit="return validateForm()">
+	    <!-- Όνομα προϊόντος -->
+	    <label for="product-name">Όνομα προϊόντος:</label>
+	    <input type="text" id="product-name" name="product-name"><br><br>
+	    
+	    <!-- Περιγραφή προϊόντος -->
+	    <label for="description">Περιγραφή:</label><br>
+	    <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+	    
+	    <!-- Τιμή προϊόντος -->
+	    <label for="price">Τιμή (€):</label>
+	    <input type="number" id="price" name="price" step="0.01"><br><br>
+	    
+	    <!-- Κουμπί υποβολής -->
+	    <input id="submit" type="submit" value="Υποβολή">
+	</form>
+	</div>
+	
+	<div id="preview" style="display:none; margin-top: 20px; border: 1px solid #ccc; padding: 10px;">
+        <!-- Η προεπισκόπηση θα εμφανιστεί εδώ -->
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+
+
+body{
+	background-color: gray;
+}
+
+
+h1{
+	text-align: center;
+	color: green;
+}
+
+
+table {
+	text-align: center; 
+	margin-left: auto;  /* autes oi entoles kedraroun ton pinaka */
+	margin-right:auto;
+}
+
+.reset {
+	border: 5px dashed gray;
+}
+
+.login {
+	color: green;
+}
